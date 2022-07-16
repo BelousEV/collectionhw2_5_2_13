@@ -14,8 +14,11 @@ public class EmployeeService {
     private static final int LIMIT = 10;
     private final Map<String, Employee> employees = new HashMap();
 
-    public Employee addEmployee(String name, String surname) {
-        Employee employee = new Employee(name, surname);
+    public Employee addEmployee(String name,
+                                String surname,
+                                int department,
+                                double salary) {
+        Employee employee = new Employee(name, surname, department, salary);
         String key = getKey(name, surname);
         if (employees.containsKey(key)) {
             throw new EmployeeAlreadyAddedException();

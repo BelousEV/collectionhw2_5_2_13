@@ -11,12 +11,21 @@ public class Employee {
     @JsonProperty ("lastName")
     private String surname;
 
+    private final int department;
+    private final double salary;
 
 
-    public Employee(String name, String surname) {
+
+    public Employee(String name,
+                    String surname,
+                    int department,
+                    double salary) {
 
         this.name = name;
         this.surname = surname;
+        this.department = department;
+        this.salary = salary;
+
 
     }
 
@@ -26,6 +35,14 @@ public class Employee {
 
     public String getSurname() {
         return surname;
+    }
+
+    public int getDepartment() {
+        return department;
+    }
+
+    public double getSalary() {
+        return salary;
     }
 
     @Override
