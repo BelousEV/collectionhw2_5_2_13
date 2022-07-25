@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping ("/departmens")
+@RequestMapping ("/departments")
 public class DepartmentController {
 
     private final DepartmentService departmentService;
@@ -29,13 +29,14 @@ public class DepartmentController {
     public Employee findEmployeeWithMinSalaryFromDepartment(@RequestParam ("departmentId") int department) {
         return departmentService.findEmployeeWithMinSalaryFromDepartment(department);
     }
-@GetMapping(value = "all", params = "departmentId")
+@GetMapping(value = "/all", params = "departmentId")
     public List<Employee> findEmployeesFromDepartment (@RequestParam ("departmentId") int department) {
     return departmentService.findEmployeesFromDepartment(department);
 }
 
-    @GetMapping(value = "all")
+    @GetMapping(value = "/all")
 public Map<Integer, List<Employee>> findEmployees(){
+
         return departmentService.findEmployees();
     }
 }
