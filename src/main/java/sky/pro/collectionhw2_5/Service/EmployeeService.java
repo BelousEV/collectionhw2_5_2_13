@@ -12,14 +12,26 @@ import java.util.*;
 public class EmployeeService {
 
     private static final int LIMIT = 10;
+
+    private final ValidatorService validatorService;
     private final Map<String, Employee> employees = new HashMap();
+
+    public EmployeeService(ValidatorService validatorService) {
+        this.validatorService = validatorService;
+    }
 
     public Employee addEmployee(String name,
                                 String surname,
                                 int department,
                                 double salary) {
-        Employee employee = new Employee(name, surname, department, salary);
+        Employee employee = new Employee(
+                validatorService.validateName(name),
+                validatorService.validatorSurname(surname),
+                department,
+                salary);
         String key = getKey(name, surname);
+
+
         if (employees.containsKey(key)) {
             throw new EmployeeAlreadyAddedException();
         }
