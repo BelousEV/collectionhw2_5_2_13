@@ -27,6 +27,7 @@ import static org.mockito.Mockito.when;
 public class DepartmentServiceTest {
 
 
+
     @Mock
     private EmployeeService employeeService;
 
@@ -89,7 +90,6 @@ public class DepartmentServiceTest {
                 )
                 );
     }
-
 
     public static Stream<Arguments> employeeWithMaxSalaryParams(){
         return Stream.of(
