@@ -38,10 +38,10 @@ public class DepartmentServiceTest {
     public void beforeEach() {
         List<Employee> employees = List.of(
                 new Employee("Василий", "Васильев", 1, 55_000),
-                new Employee("Андрей", "Андреев", 1, 65_500),
+                new Employee("Андрей", "Андреев", 1, 65_000),
                 new Employee("Иван", "Иванов", 2, 45_000),
                 new Employee("Мария", "Иванова", 2, 50_000),
-                new Employee("Ирина", "Андеева", 2, 47_000));
+                new Employee("Ирина", "Андреева", 2, 47_000));
         when(employeeService.getAll()).thenReturn(employees);
     }
 
@@ -100,7 +100,7 @@ public class DepartmentServiceTest {
 
     public static Stream<Arguments> employeeWithMinSalaryParams() {
         return Stream.of(
-                Arguments.of(1, new Employee("Василий", "Васильев", 1, 50_000)),
+                Arguments.of(1, new Employee("Василий", "Васильев", 1, 55_000)),
                 Arguments.of(2, new Employee("Иван", "Иванов", 2, 45_000))
         );
     }
