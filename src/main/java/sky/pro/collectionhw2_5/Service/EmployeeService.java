@@ -46,7 +46,7 @@ public class EmployeeService {
 
         String key = getKey(name, surname);
         if (employees.containsKey(key)) {
-            throw new EmployeeNotFoundException();
+           throw new EmployeeNotFoundException();
         }
         return employees.get(key);
     }
@@ -71,5 +71,7 @@ public class EmployeeService {
                           ) {
         return name + "|" + surname;
     }
+
+
 }
 
