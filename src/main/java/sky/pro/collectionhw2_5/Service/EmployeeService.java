@@ -46,10 +46,12 @@ public class EmployeeService {
 
         String key = getKey(name, surname);
         if (employees.containsKey(key)) {
+            return employees.get(key);
+        }
            throw new EmployeeNotFoundException();
         }
-        return employees.get(key);
-    }
+
+
 
 
      public Employee removeEmployee (String name, String surname){
